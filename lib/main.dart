@@ -1,26 +1,22 @@
 import 'package:exercise5/bloc/app_bloc.dart';
-import 'package:exercise5/theme_data/theme.dart';
+import 'package:exercise5/pages/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
-import 'app_router/router.gr.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
-
-  // Get an instance of the App Router
-  final _appRouter = AppRouter();
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<AppBloc>(
       create: (_) => AppBloc(),
-      child: MaterialApp.router(
+      child: MaterialApp(
         // Make it responsive to different screen sizes
         builder: (context, child) => ResponsiveWrapper.builder(
           child,
@@ -35,10 +31,8 @@ class MyApp extends StatelessWidget {
             const ResponsiveBreakpoint.autoScale(1700, name: 'XL'),
           ],
         ),
-        theme: MyTheme().themeData,
         debugShowCheckedModeBanner: false,
-        routerDelegate: _appRouter.delegate(),
-        routeInformationParser: _appRouter.defaultRouteParser(),
+        home: const MainScreen(),
       ),
     );
   }

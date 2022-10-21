@@ -8,6 +8,11 @@ const kInputDecoration = InputDecoration(
     color: Color(0xFF727C83),
   ),
   hintText: 'Search name here',
+  hintStyle: TextStyle(
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w600,
+    fontSize: 14.5,
+  ),
   fillColor: Color(0xFFE9EBEC),
   border: OutlineInputBorder(
     borderRadius: BorderRadius.all(

@@ -24,16 +24,20 @@ class ContactList extends StatelessWidget {
               Contact item = data.getContacts()[index];
               return ListTile(
                 contentPadding: const EdgeInsets.symmetric(
-                  vertical: 5,
+                  vertical: 6,
                 ),
                 leading: CircleAvatar(
-                  radius: 22,
+                  radius: 21,
                   backgroundImage: AssetImage(item.image),
                 ),
                 title: Padding(
                   padding: const EdgeInsets.only(left: 9),
                   child: Text(
                     item.name,
+                    style: const TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 14.5,
+                    ),
                   ),
                 ),
               );
